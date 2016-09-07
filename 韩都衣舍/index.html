@@ -12,6 +12,17 @@
 
 </head>
 <body>
+	<!--吸顶搜索框-->
+	<div id="fix-search">
+		<div class="fix-search">
+			<h1><img src="img/slogo.png" alt="" width="77" height="40"/></h1>
+			<form action="">
+				<input type="text" placeholder="连衣裙" class="txt"/>
+				<input type="button" value="搜索" class="btn"/>
+			</form>
+			<span>没空去韩国？就来韩都衣舍!</span>
+		</div>
+	</div>
 	<!-- global-nav -->
 	<div id="global-nav">
 		<div class="global-nav">
@@ -29,9 +40,51 @@
 				<ul class="global-help">
 					<li><a href="#">在线客服</a></li>
 					<li><a href="#">帮助中心</a></li>
-					<li><a href="#"><span></span>网站导航</a></li>
+					<li id="site-nav-display"><a  href="#"><span></span>网站导航</a>
+						<ul class="site-nav">
+							<li class="nav-hot">
+								<h2>大家都在买 Hot</h2>
+								<a href="">T恤</a>
+								<a href="">连衣裙</a>
+								<a href="">牛仔裤</a>
+								<a href="">毛衣针织</a>
+								<a href="">卫衣绒衫</a>
+								<a href="">休闲套装</a>
+							</li>
+							<li class="nav-women">
+								<h2>女装  Women</h2>
+								<a href="">韩风快时尚女装</a>
+								<a href="">韩风快时尚妈妈装</a>
+								<a href="">韩风甜美少女装</a>
+								<a href="">韩风复古设计师女装</a>
+								<a href="">韩风名媛时尚女装</a>
+								<a href="">欧美浪漫田园风女装</a>
+								<a href="">韩风大码女装</a>
+								<a href="">欧美快时尚女装</a>
+							</li>
+							<li class="nav-men one-line">
+								<h2>男装 Men</h2>
+								<a href="">韩风快时尚男装</a>
+								<a href="">东方禅意设计师男装</a>
+								<a href="">欧美街头轻潮男装</a>
+							</li>
+							<li class="nav-children one-line">
+								<h2>童装 Children</h2>
+								<a href="">韩风快时尚童装</a>
+								<a href="">东方简约设计师童装</a>
+							</li>
+							<li class="nav-help" style="border:0">
+								<h2>帮助中心 Help</h2>
+								<a href="">会员制度</a>
+								<a href="">售后服务</a>
+								<a href="">购物流程</a>
+								<a href="">韩都招聘</a>
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</div>
+			
 		</div>
 		
 	</div>
@@ -63,23 +116,58 @@
 	</div>
 
 	<!-- index-nav -->
+	 <script>
+   		$(function(){	
+		// 导航左侧栏js效果 start
+		
+			$(".pulldown-list li").hover(function(){
+			$(".yMenuLConin").hide();
+			$(this).find(".listi5").children("img").eq(0).css("display","none");
+			$(this).find(".listi5").children("img").eq(1).css("display","block");
+			$(".yMenuLCon").fadeIn();
+			var index=$(this).index(".pulldown-list li");
+			$(this).addClass("menulihover").siblings().removeClass("menulihover");
+				$(this).addClass("mliselected").siblings().removeClass("mliselected");
+			$($(".yMenuLConin")[index]).fadeIn().siblings().fadeOut();
+			$($(".yMenuLConin")[index]).addClass("yMenuLConinhover").siblings().removeClass("yMenuLConinhover");
+			$(this).siblings().children("yMenuLConin").hide();
+			
+		},function(){
+			$(this).find(".listi5").children("img").eq(0).css("display","block");
+			$(this).find(".listi5").children("img").eq(1).css("display","none");
+		})
+			$(".pullD").mouseleave(function(){
+			$(".yMenuLCon").fadeOut();
+			$(".yMenuLConin").fadeOut();
+			$(".pulldown-list li").removeClass("menulihover");
+			
+		})
+	})
+    </script>
 	<div id="index-nav">
 		<ul class="index-nav-fl">
 			<li class="all-class">全部商品分类
 				<ul class="pulldown-list">
 					<li>
 						<h3>
-							<i><img src="img/tb1.png" alt=""></i>
+							<i class="list5">
+								<img src="img/tb1.png" alt="">
+								<img src="img/tb01.png" style="display:none;"/>
+							</i>
 							全部商品分类
 						</h3>
 						<a href="">本周新品</a>
 						<a href="">按价格</a>
 						<a href="">按销量</a>
 						<span>></span>
+						
 					</li>
 					<li>
 						<h3>
-							<i><img src="img/tb2.png" alt=""></i>
+							<i class="list5">
+								<img src="img/tb2.png" alt="">
+								<img src="img/tb02.png" style="display:none;"/>
+							</i>
 							精选推荐
 						</h3>
 						<a style="color:#f00" href="">连衣裙</a>
@@ -89,7 +177,10 @@
 					</li>
 					<li>
 						<h3>
-							<i><img src="img/tb3.png" alt=""></i>
+							<i class="list5">
+								<img src="img/tb3.png" alt="">
+								<img src="img/tb03.png" style="display:none;"/>
+							</i>
 							潮流女装
 						</h3>
 						<a style="color:#f00" href="">T恤</a>
@@ -99,7 +190,10 @@
 					</li>
 					<li>
 						<h3>
-							<i><img src="img/tb4.png" alt=""></i>
+							<i class="list5">
+								<img src="img/tb4.png" alt="">
+								<img src="img/tb04.png" style="display:none;"/>
+							</i>
 							精品男装
 						</h3>
 						<a style="color:#f00" href="">T恤</a>
@@ -109,7 +203,10 @@
 					</li>
 					<li>
 						<h3>
-							<i><img src="img/tb5.png" alt=""></i>
+							<i class="list5">
+								<img src="img/tb5.png" alt="">
+								<img src="img/tb05.png" style="display:none;"/>
+							</i>
 							可爱童装
 						</h3>
 						<a href="">童装新品</a>
@@ -119,7 +216,10 @@
 					</li>
 					<li style="height:45px">
 						<h3>
-							<i><img src="img/tb6.png" alt=""></i>
+							<i class="list5">
+								<img src="img/tb6.png" alt="">
+								<img src="img/tb06.png" style="display:none;"/>
+							</i>
 							时尚妈妈
 						</h3>
 						<a href="">T恤</a>
@@ -130,7 +230,10 @@
 					</li>
 					<li style="height:43px">
 						<h3>
-							<i><img src="img/tb7.png" alt=""></i>
+							<i class="list5">
+								<img src="img/tb7.png" alt="">
+								<img src="img/tb07.png" style="display:none;"/>
+							</i>
 							鞋包配饰
 						</h3>
 						<a style="color:#f00" href="">鞋子</a>
@@ -140,14 +243,292 @@
 					</li>
 					
 				</ul>
+				<div class="yMenuLCon">
+					<div class="yMenuLConin">
+                    	<div class="itemtc_h">
+                        	<div class="itemtcul_h">
+                                <div style="width:70px; float:left;">
+                                    <a href="" target="_blank" class="fl_ah"><img src="img/nana.png" alt="娜娜日记">
+                                	</a>
+                                    <a href="http://www.handu.com/topic-423.html" target="_blank" class="fl_ah" ><img  src="img/hstyle.png" alt="HSTYLE"/>
+                               		</a>
+                               		 <a href="http://www.handu.com/brand_topic.php?id=10314" target="_blank" class="fl_ah"><img src="img/forqueen.png" alt="范奎恩">
+                               		</a>
+                                	<a href="http://www.handu.com/brand_topic.php?id=319" target="_blank" class="fl_ah"><img src="img/soneed.png" alt="soneed">
+                                	</a>
+                                	<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10142" class="fl_ah"><img src="img/hanyunyixiang.png" alt="韩韵衣香">
+                                	</a>
+                                	<a href="http://www.handu.com/brand_topic.php?id=10442" target="_blank" class="fl_ah">
+                                    	<img src="img/ytxz.png" alt="樱桃小镇">
+                                    </a>
+                                	<a href="http://www.handu.com/brand_topic.php?id=328" target="_blank" class="fl_ah">
+                                   	 	<img src="img/nibbuns.png" alt="nibbuns">
+                                    </a>
+                                    <a href="http://www.handu.com/brand_topic.php?id=10687" target="_blank" class="fl_ah">
+                                    	<img src="img/cx.png" alt="池希">
+                                    </a>
+                                    <a href="http://www.handu.com/brand_topic.php?id=10593" target="_blank"class="fl_ah" >
+                                    	<img src="img/bly.png" alt="白鹿语">
+                                    </a>
+                                </div>
+                                <div style="width:70px; float:left; margin-left:10px;">
+                                     
+                                    <a href="http://www.handu.com/brand_topic.php?id=10470" target="_blank" class="fl_ah" >
+                                    	<img src="img/laola.png" alt="劳拉的誓约">
+                                    </a>
+                                    <a target="_blank" href="http://www.handu.com/brand_topic.php?id=155" class="fl_ah"><img src="img/sulv.png" alt="原创素缕">
+                                     </a>
+                                     <a href="http://www.handu.com/brand_topic.php?id=10686" target="_blank" class="fl_ah" >
+                                      	<img src="img/zc.png" alt="哲初">
+                                    </a>
+                                    <a href="http://www.handu.com/brand_topic.php?id=22" target="_blank" class="fl_ah" ><img src="img/amh.png" alt="AMH">
+                                	</a>
+                            
+                                	<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10469" class="fl_ah"><img src="img/anma.png" alt="暗码">
+                                	</a>
+                                  	<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10361" class="fl_ah"  ><img src="img/zg.png" alt="自古">
+                                 	</a>
+                               	 	<a href="http://www.handu.com/brand_topic.php?id=196" target="_blank" class="fl_ah" ><img src="img/mini.png" alt="童装minizaru">
+                                	</a>
+                                	<a target="_blank" href="http://www.handu.com/brand_topic.php?id=10534" class="fl_ah"  ><img src="img/hp.png" alt="HoneyPig">
+                                </a>
+                                   <a href="http://www.handu.com/brand_topic.php?id=10765" target="_blank" class="fl_ah" >
+                                    	<img src="img/dx1.png" alt="户外童装">
+                                    </a>  
+                                    </div>
+                              <div style="width:70px; float:left; margin-left:10px;">
+                                
+                                 
+                                     <a target="_blank" href="http://www.handu.com/brand_topic.php?id=10407" class="fl_ah" >
+                                     <img src="img/guoya.png" alt="果芽">
+                                  </a>
+                                       
+                                      
+                              </div>
+                                    
+</div>
+                              
+                        </div>
+                   </div>
+			 
+				<div class="yMenuLConin" style="width:400px;">
+				 <div class="itemtc_h itemtc_h02">
+         		 <div class="itContent_h"> <div class="divH3">特惠精选</div>
+                 <div> <a href="http://www.handu.com/topic-1174.html" target="_blank">清仓特惠</a>  <a href="http://www.handu.com/topic-991.html" target="_blank">爆款特惠</a> 
+            </div>
+           
+          </div>
+          <div  class="menu_line_1"></div>
+          
+          <div class="itContent_h"> <div class="divH3">潮流新品</div> <div>
+ <a href="http://www.handu.com/topic-1363.html" target="_blank" style="color:#f00">2016秋装新品</a>  <a href="http://www.handu.com/category-155-b0-1-add_time-desc.html" target="_blank">原创新品</a>  <a href="http://www.handu.com/category-242-b0-1-add_time-desc.html" target="_blank">T恤新品</a>  <a href="http://www.handu.com/category-247-b0-1-add_time-desc.html" target="_blank">连衣裙新品</a> 
+  <a href="http://www.handu.com/category-249-b0-1-add_time-desc.html" target="_blank">牛仔新品</a>
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+           
+          <div class="itContent_h"> <div class="divH3">类目新品</div> <div>
+ <a href="http://www.handu.com/category-247-b0.html" target="_blank" style="color:#f00;"><em>连衣裙</em></a>    <a href="http://www.handu.com/category-249-b0-1-add_time-desc.html" target="_blank">牛仔裤</a>  <a href="http://www.handu.com/category-246-b0-1-add_time-desc.html" target="_blank"><em>衬衫</em></a>  <a href="http://www.handu.com/category-241-b0-1-add_time-desc.html" target="_blank">卫衣</a>  <a href="http://www.handu.com/category-242-b0.html" target="_blank" style="color:#f00;">T恤</a>  <a href="http://www.handu.com/category-250-b0-1-add_time-desc.html" target="_blank">休闲裤</a>  <a href="http://www.handu.com/category-248-b0-1-add_time-desc.html" target="_blank">半身裙</a>  <a href="http://www.handu.com/category-57-b0-1-add_time-desc.html" target="_blank">套装</a>  <a href="http://www.handu.com/category-253-b0-1-add_time-desc.html" target="_blank">短裤</a>
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+             
+          <div class="itContent_h"> <div class="divH3">爆款集锦</div> <div>
+ <a href="http://www.handu.com/category-225-b0-1-sell_count-desc.html" target="_blank" style="color:#f00">2016秋装爆款</a>  <a href="http://www.handu.com/category-225-b0.html" target="_blank">女装爆款</a>  <a href="http://www.handu.com/category-22-b0.html" target="_blank">男装爆款</a>  <a href="http://www.handu.com/category-196-b0.html" target="_blank">童装爆款</a>  <a href="http://www.handu.com/category-10142-b0.html" target="_blank">妈妈装爆款</a>
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+           <div class="itContent_h"> <div class="divH3">百变风格</div> <div>
+ <a href="http://www.handu.com/topic-423.html" target="_blank" style="color:#f00">潮流韩范</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E7%BA%AF%E8%89%B2" target="_blank">纯色</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E4%BC%98%E9%9B%85" target="_blank">优雅OL</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E5%8D%B0%E8%8A%B1" target="_blank">印花</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E7%94%9C%E7%BE%8E" target="_blank">甜美清新</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E6%9D%A1%E7%BA%B9" target="_blank">条纹</a>  <a href="http://www.handu.com/topic-1226.html" target="_blank">度假出游</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E6%8B%BC%E6%8E%A5" target="_blank">拼接</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E5%A4%8D%E5%8F%A4" target="_blank">复古</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E5%AD%97%E6%AF%8D" target="_blank">字母</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E4%BF%AE%E8%BA%AB" target="_blank">修身</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E5%87%A0%E4%BD%95" target="_blank">几何</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E5%AE%BD%E6%9D%BE" target="_blank">宽松</a>  <a href="http://www.handu.com/search.php?keywords=%E5%A5%B3%E8%A3%85+%E4%B8%8D%E8%A7%84%E5%88%99" target="_blank">不规则</a>
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+           <div class="itContent_h"> <div class="divH3">更多推荐</div> <div>
+ <a href="http://www.handu.com/topic-417.html" target="_blank">设计师推荐</a>  <a href="http://www.handu.com/topic-1168.html" target="_blank">大码-范奎恩</a>  <a href="http://www.handu.com/topic-1240.html" target="_blank">劳拉的誓约</a>  <a href="http://www.handu.com/topic-1338.html" target="_blank">极简主义-白鹿语</a>  <a href="http://www.handu.com/topic-1441.html" target="_blank" style="color:#f00"><em>轻时尚简约-哲初</em></a> 
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+             
+          
+   				 </div>
+				</div>
+         
+         	<div class="yMenuLConin" style="width:400px;">
+				 <div class="itemtc_h itemtc_h02">
+         		 <div class="itContent_h"> <div class="divH3">韩风时尚HSTYLE</div> <div>
+ <a href="http://www.handu.com/category-242-b0.html" target="_blank" style="color:#f00;">T恤</a>  <a href="http://www.handu.com/category-246-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-57-b0.html" target="_blank"><em>套装</em></a><a href="http://www.handu.com/category-247-b0.html" target="_blank" style="color:#f00;">连衣裙</a>  <a href="http://www.handu.com/category-248-b0.html" target="_blank">半身裙</a>  <a href="http://www.handu.com/category-249-b0.html" target="_blank" style="color:#f00;">牛仔裤</a>  <a href="http://www.handu.com/category-250-b0.html" target="_blank">休闲裤</a> <a href="http://www.handu.com/category-253-b0.html" target="_blank">短裤</a><a href="http://www.handu.com/category-254-b0.html" target="_blank">蕾丝衫/雪纺衫</a> 
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+          
+          <div class="itContent_h"> <div class="divH3">时尚名媛SONEED</div> <div>
+ <a href="http://www.handu.com/category-324-b0.html" target="_blank">T恤</a>  <a href="http://www.handu.com/category-323-b0.html" target="_blank" style="color:#f00;">衬衫</a>  <a href="http://www.handu.com/category-322-b0.html" target="_blank">蕾丝衫/雪纺衫</a>  <a href="http://www.handu.com/category-358-b0.html" target="_blank">毛针织衫</a>  <a href="http://www.handu.com/category-10438-b0.html" target="_blank">卫衣/绒衫</a>  <a href="http://www.handu.com/category-341-b0.html" target="_blank">西装</a>  <a href="http://www.handu.com/category-10631-b0.html" target="_blank">套装</a>  <a href="http://www.handu.com/category-10205-b0.html" target="_blank">风衣</a>  <a href="http://www.handu.com/category-10208-b0.html" target="_blank">背心吊带</a>  <a href="http://www.handu.com/category-405-b0.html" target="_blank">毛呢外套</a>  <a href="http://www.handu.com/category-320-b0.html" target="_blank">连衣裙</a>  <a href="http://www.handu.com/category-321-b0.html" target="_blank">半身裙</a>  <a href="http://www.handu.com/category-410-b0.html" target="_blank">牛仔裤</a>  <a href="http://www.handu.com/category-325-b0.html" target="_blank">休闲裤</a>  <a href="http://www.handu.com/category-416-b0.html" target="_blank">短裤</a> 
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+           
+          <div class="itContent_h" style="height:78px;"> <div class="divH3">欧美风尚 尼班诗</div> <div>
+ <a href="http://www.handu.com/category-329-b0.html" target="_blank">T恤</a>  <a href="http://www.handu.com/category-330-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-396-b0.html" target="_blank">西装</a>  <a href="http://www.handu.com/category-331-b0.html" target="_blank">蕾丝衫/雪纺衫</a>  <a href="http://www.handu.com/category-365-b0.html" target="_blank">卫衣/绒衫</a>  <a href="http://www.handu.com/category-386-b0.html" target="_blank">毛针织衫</a>  <a href="http://www.handu.com/category-10198-b0.html" target="_blank">风衣</a>  <a href="http://www.handu.com/category-397-b0.html" target="_blank">毛呢外套</a>  <a href="http://www.handu.com/category-335-b0.html" target="_blank">短裤</a>   <a href="http://www.handu.com/category-10288-b0.html" target="_blank" style="color:#f00;">牛仔裤</a>  <a href="http://www.handu.com/category-10287-b0.html" target="_blank">休闲裤</a>  <a href="http://www.handu.com/category-388-b0.html" target="_blank">打底裤</a>  <a href="http://www.handu.com/category-333-b0.html" target="_blank"><em>半身裙</em></a>  <a href="http://www.handu.com/category-332-b0.html" target="_blank">连衣裙</a> 
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+             
+          <div class="itContent_h"> <div class="divH3">甜美少女NanaDay</div> <div>
+ <a href="http://www.handu.com/category-10340-b0.html" target="_blank">毛针织衫</a>  <a href="http://www.handu.com/category-10334-b0.html" target="_blank" style="color:#f00;">T恤</a>  <a href="http://www.handu.com/category-10380-b0.html" target="_blank">短外套</a>  <a href="http://www.handu.com/category-10338-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-10353-b0.html" target="_blank"><em>棉衣棉服</em></a>  <a href="http://www.handu.com/category-10341-b0.html" target="_blank">卫衣/绒衫</a>  <a href="http://www.handu.com/category-10385-b0.html" target="_blank">套装</a>  <a href="http://www.handu.com/category-10352-b0.html" target="_blank">连衣裙</a>  <a href="http://www.handu.com/category-10351-b0.html" target="_blank">半身裙</a><a href="http://www.handu.com/category-10758-b0.html" target="_blank">毛呢外套</a><a href="http://www.handu.com/category-10757-b0.html" target="_blank">羽绒服</a><a href="http://www.handu.com/category-10337-b0.html" target="_blank">蕾丝雪纺</a><a href="http://www.handu.com/category-10332-b0.html" target="_blank">裤装</a>
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+             
+          <div class="itContent_h"  style="border:none; height:auto;"> <div class="itContent_zpp">
+ 						<a href="http://www.handu.com/topic-423.html" target="_blank" class="fl_ah aFirst"><img  src="img/hstyle.png" alt="HSTYLE"/>
+                                </a>
+                                 <a target="_blank" href="http://www.handu.com/topic-417.html" class="fl_ah"><img src="img/sulv.png" alt="原创素缕"></a>
+                                	<a href="http://www.handu.com/topic-502.html" target="_blank" class="fl_ah"><img src="img/soneed.png" alt="soneed">
+                                </a>
+                                 <a href="http://www.handu.com/topic-503.html" target="_blank" class="fl_ah">
+                                   	<img src="img/nibbuns.png" alt="nibbuns">
+                                    </a>  
+                                <a href="http://www.handu.com/topic-1168.html" target="_blank" class="fl_ah aFirst"><img src="img/forqueen.png" alt="范奎恩">
+                                </a>	
+                                <a href="http://www.handu.com/topic-1173.html" target="_blank" class="fl_ah"><img src="img/nana.png" alt="娜娜日记">
+                                </a>  
+                                  <a href="http://www.handu.com/topic-1226.html" target="_blank" class="fl_ah">
+                                    	<img src="img/ytxz.png" alt="樱桃小镇">
+                                    </a>  
+                                <a href="http://www.handu.com/topic-1240.html" target="_blank" class="fl_ah">
+                                    	<img src="img/laola.png" alt="劳拉的誓约">
+                                    </a> 
+                               
+                                      <a href="http://www.handu.com/topic-1338.html" target="_blank"class="fl_ah aFirst">
+                                    	<img src="img/bly.png" alt="白鹿语">
+                                    </a> 
+                                <a href="http://www.handu.com/topic-1441.html" target="_blank" class="fl_ah">
+                                    	<img src="img/zc.png" alt="哲初">
+                                    </a>
+                                 <a href="http://www.handu.com/topic-1448.html" target="_blank" class="fl_ah">
+                                    	<img src="img/cx.png" alt="池希">
+                                    </a>
+                                    
+                                   
+                                                        
+                    
+                               
+                             
+            </div>
+          </div>
+   				 </div>
+				</div>
+         
+				<div class="yMenuLConin" style="width:400px; top:160px; height:294px;">
+				 <div class="itemtc_h itemtc_h02">
+         		 <div class="itContent_h"> <div class="divH3">韩风时尚AMH</div> <div>
+ <a href="http://www.handu.com/category-67-b0.html" target="_blank" style="color:#f00;">T恤</a>  <a href="http://www.handu.com/category-288-b0.html" target="_blank">POLO衫</a>  <a href="http://www.handu.com/category-127-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-126-b0.html" target="_blank">毛衣/针织</a>  <a href="http://www.handu.com/category-124-b0.html" target="_blank">卫衣</a>  <a href="http://www.handu.com/category-144-b0.html" target="_blank">外套</a>  <a href="http://www.handu.com/category-401-b0.html" target="_blank">夹克</a>  <a href="http://www.handu.com/category-137-b0.html" target="_blank">风衣</a>  <a href="http://www.handu.com/category-10533-b0.html" target="_blank">棉衣棉服</a>  <a href="http://www.handu.com/category-145-b0.html" target="_blank">羽绒服</a>  <a href="http://www.handu.com/category-226-b0.html" target="_blank">休闲裤</a>  <a href="http://www.handu.com/category-116-b0.html" target="_blank">牛仔裤</a>  <a href="http://www.handu.com/category-10190-b0.html" target="_blank">腰带</a>  <a href="http://www.handu.com/category-281-b0.html" target="_blank">男鞋</a>  <a href="http://www.handu.com/category-304-b0.html" target="_blank">帽子</a>  <a href="http://www.handu.com/category-305-b0.html" target="_blank">男包</a>  
+            </div>
+          </div>
+           <div  class="menu_line_1"></div>
+          
+          <div class="itContent_h"> <div class="divH3">欧美街头 暗码</div> <div>
+ <a href="http://www.handu.com/category-10494-b0.html" target="_blank">T恤</a>  <a href="http://www.handu.com/category-10493-b0.html" target="_blank">PLLO衫</a>  <a href="http://www.handu.com/category-10492-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-10490-b0.html" target="_blank">毛衣/针织衫</a>  <a href="http://www.handu.com/category-10495-b0.html" target="_blank">卫衣</a>  <a href="http://www.handu.com/category-10500-b0.html" target="_blank">夹克</a>  <a href="http://www.handu.com/category-10497-b0.html" target="_blank" style="color:#f00;">休闲裤</a>  <a href="http://www.handu.com/category-10496-b0.html" target="_blank">牛仔裤</a>
+            </div>
+          </div>
+           
+          <div class="itContent_h" > <div class="divH3">东方禅意 自古</div> <div>
+ <a href="http://www.handu.com/category-10362-b0.html" target="_blank">T恤</a>  <a href="http://www.handu.com/category-10363-b0.html" target="_blank" style="color:#f00">衬衫</a>  <a href="http://www.handu.com/category-10364-b0.html" target="_blank">针织衫</a>  <a href="http://www.handu.com/category-10366-b0.html" target="_blank">风衣</a>  <a href="http://www.handu.com/category-10372-b0.html" target="_blank">休闲裤</a>
+            </div>
+          </div>
+          <div  class="menu_line_1"></div>
+          
+             
+          <div class="itContent_h"  style="border:none; height:auto;"> <div class="itContent_zpp">
+ 	
+                                	<a href="http://www.handu.com/topic-406.html" target="_blank" class="fl_ah aFirst"><img src="img/amh.png" alt="AMH">
+                                </a>
+                              
+                                 <a target="_blank" href="http://www.handu.com/topic-1225.html" class="fl_ah"><img src="img/anma.png" alt="暗码"></a>
+                                
+                            
+                                <a target="_blank" href="http://www.handu.com/topic-1184.html" class="fl_ah"><img src="img/zg.png" alt="自古"></a>
+                            
+            </div>
+          </div>
+   				 </div>
+				</div>
+           
+           <div class="yMenuLConin" style="width:400px; top:140px; height:314px;">
+				 <div class="itemtc_h itemtc_h02">
+         		 <div class="itContent_h"> <div class="divH3">韩风时尚Minizaru</div> <div>
+ <a href="http://www.handu.com/category-206-b0.html" target="_blank" style="color:#f00;">T恤</a>  <a href="http://www.handu.com/category-227-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-207-b0.html" target="_blank">卫衣</a>  <a href="http://www.handu.com/category-210-b0.html" target="_blank">套装</a>  <a href="http://www.handu.com/category-200-b0.html" target="_blank">毛衣/针织衫</a>  <a href="http://www.handu.com/category-209-b0.html" target="_blank">毛呢/外套</a>  <a href="http://www.handu.com/category-10397-b0.html" target="_blank">羽绒服饰</a>  <a href="http://www.handu.com/category-215-b0.html" target="_blank">半身裙</a>  <a href="http://www.handu.com/category-211-b0.html" target="_blank">连衣裙</a>  <a href="http://www.handu.com/category-214-b0.html" target="_blank">休闲裤</a>
+ <a href="http://www.handu.com/category-212-b0.html" target="_blank">牛仔裤</a> 
+ <a href="http://www.handu.com/category-213-b0.html" target="_blank"><em>打底裤</em></a> 
+ <a href="http://www.handu.com/category-219-b0.html" target="_blank">短裤</a> <a href="http://www.handu.com/category-10394-b0.html" target="_blank">马甲</a>   
+            </div>
+          </div>
+            <div  class="menu_line_1"></div>
+          
+          <div class="itContent_h"> <div class="divH3">欧美风尚HoneyPig</div> <div>
+ <a href="http://www.handu.com/category-10542-b0.html" target="_blank">T恤</a>  <a href="http://www.handu.com/category-10544-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-10543-b0.html" target="_blank">卫衣</a> <a href="http://www.handu.com/category-10536-b0.html" target="_blank">毛衣/针织衫</a>  <a href="http://www.handu.com/category-10538-b0.html" target="_blank">外套/夹克/大衣</a>  <a href="http://www.handu.com/category-10537-b0.html" target="_blank">套装</a>  <a href="http://www.handu.com/category-10549-b0.html" target="_blank">连衣裙</a>  <a href="http://www.handu.com/category-10550-b0.html" target="_blank">半身裙</a>  <a href="http://www.handu.com/category-10553-b0.html" target="_blank">短裤</a>  <a href="http://www.handu.com/category-10554-b0.html" target="_blank" style="color:#f00">休闲裤</a>  <a href="http://www.handu.com/category-10551-b0.html" target="_blank">打底裤</a>  <a href="http://www.handu.com/category-10552-b0.html" target="_blank">牛仔裤</a> 
+            </div>
+          </div>
+            <div  class="menu_line_1"></div>
+           
+          <div class="itContent_h"> <div class="divH3">东方简约 果芽</div> <div>
+ <a href="http://www.handu.com/category-10413-b0.html" target="_blank" style="color:#f00">T恤/吊带衫</a>  <a href="http://www.handu.com/category-10419-b0.html" target="_blank" style="color:#333">毛衣/针织衫</a>  <a href="http://www.handu.com/category-10417-b0.html" target="_blank">衬衫</a>  <a href="http://www.handu.com/category-10420-b0.html" target="_blank">卫衣/绒衫</a>  <a href="http://www.handu.com/category-10418-b0.html" target="_blank">外套</a>  <a href="http://www.handu.com/category-10416-b0.html" target="_blank">裤子</a>  <a href="http://www.handu.com/category-10414-b0.html" target="_blank">半身裙</a>  <a href="http://www.handu.com/category-10415-b0.html" target="_blank">连衣裙</a><a href="http://www.handu.com/category-10421-b0.html" target="_blank">棉衣/棉服</a> 
+            </div>
+          </div>
+          <div  class="menu_line_1"></div>
+             
+          <div class="itContent_h"  style="border:none; height:auto;">  <div class="itContent_zpp">
+ 	
+                                <a href="http://www.handu.com/topic-347.html" target="_blank" class="fl_ah aFirst"><img src="img/mini.png" alt="童装minizaru">
+                                </a>
+                          
+                                <a target="_blank" href="http://www.handu.com/topic-1265.html" class="fl_ah"><img src="img/hp.png" alt="HoneyPig"></a>
+                            
+                                <a target="_blank" href="http://www.handu.com/topic-1196.html" class="fl_ah"><img src="img/guoya.png" alt="果芽"></a>
+                                <a target="_blank" href="http://www.handu.com/topic-1510.html" class="fl_ah"><img src="img/dx1.png" alt="户外童装"></a>
+               
+            </div>
+          </div>
+   				 </div>
+				</div>
+              
+              <div class="yMenuLConin" style="width:400px; top:300px; height:154px">
+				 <div class="itemtc_h itemtc_h02">
+         		 <div class="itContent_h"> <div class="divH3">妈妈装</div> <div>
+ <a href="http://www.handu.com/category-10144-b0.html" target="_blank" style="color:#f00">T恤</a>  <a href="http://www.handu.com/category-10145-b0.html" target="_blank"><em>衬衫</em></a>  <a href="http://www.handu.com/category-10646-b0.html" target="_blank" >外套</a>  <a href="http://www.handu.com/category-10146-b0.html" target="_blank">毛衣/针织</a>  <a href="http://www.handu.com/category-10176-b0.html" target="_blank">风衣</a>  <a href="http://www.handu.com/category-10147-b0.html" target="_blank"><em>棉衣/棉服</em></a>  <a href="http://www.handu.com/category-10215-b0.html" target="_blank">马甲</a>  <a href="http://www.handu.com/category-10152-b0.html" target="_blank">裤子</a>  <a href="http://www.handu.com/category-10151-b0.html" target="_blank">连衣裙</a>  <a href="http://www.handu.com/category-10378-b0.html" target="_blank">半身裙</a>  <a href="http://www.handu.com/category-10294-b0.html" target="_blank">套装</a>  
+            </div>
+          </div>
+   <div  class="menu_line_1"></div>
+          
+             
+          <div class="itContent_h"  style="border:none; height:auto;"><div class="itContent_zpp">
+ 
+                                	 <a href="http://www.handu.com/topic-748.html" target="_blank" class="fl_ah aFirst">
+                                 	<img src="img/hanyunyixiang.png" alt="韩韵衣香">
+                                    </a>  
+       						     </div>
+        					  </div>
+   						 </div>
+					</div>
+		 		</div>
 			</li>
 			<li><a href="#">2016秋装新品</a></li>
 			<li><a href="#">会员专享</a></li>
 			<li><a href="#">团购批发</a></li>
 		</ul>
 		<ul class="index-nav-fr">
-			<li><a href="">会员俱乐部<img src="img/sjt.png" alt=""></a></li>
-			<li><a href="">韩都咨询<img src="img/sjt.png" alt=""></a></li>
+			<li><a href="">会员俱乐部<img src="img/sjt.png" alt=""></a>
+				<ul id="clubxl">
+					<li><a href="" style="margin:0;padding:0;">韩都真人秀</a></li>
+					<li><a href="" style="margin:0;padding:0;">好评有礼</a></li>
+				</ul>
+			</li>
+			<li><a href="">韩都咨询<img src="img/sjt.png" alt=""></a>
+				<ul id="hdzxxl">
+					<li><a href="" style="margin:0;padding:0;">韩都设计</a></li>
+					<li><a href="" style="margin:0;padding:0;">品牌故事</a></li>
+				</ul>
+			</li>
 			<li><a href="">招兵买马</a></li>
 		</ul>
 	</div>
@@ -230,7 +611,7 @@
 				</ul>
 				<ul class="hd_msg-right-con">
 					<li class="block">
-						<div class="tab-one" style="margin-right:18px">
+						<div class="tab-one" >
 							<a href=""><span>韩都衣舍上市获批！成互联网品牌第一股！......</span></a>
 							<ul class="tab-one-list">
 								<li><a href="">韩都衣舍签约亚洲女神朴信惠</a></li>
@@ -247,10 +628,47 @@
 							</ul>
 						</div>
 					</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-				</ul>
+					<!--选项卡-明星家族-->
+					<li>
+						<div class="tab-two">
+							<a href=""></a>
+							<ul class="tab-one-list">
+								<li><a href="">签约三大韩星：韩都衣舍欲书写互联网品牌的中国时尚传奇</a><a class="all" href="">[详细内容]</a></li>
+								<li><a href="">StarVC为韩都衣舍品牌背书</a><a class="all" href="">[详细内容]</a></li>
+								<li><a href="">AMH星势力计划—韩国巨星池昌旭签约发布会</a><a class="all" href="">[详细内容]</a></li>
+							</ul>
+						</div>
+					</li>
+					<!--选项卡-媒体报答-->
+					<li>
+						<div class="tab-one" >
+							<a href="" style="background: url(img/xp.jpg) no-repeat center;"><span>韩都衣舍：一个线上品牌的衍变</span></a>
+							<ul class="tab-one-list">
+								<li><a href="">韩都衣舍：阿米巴炸裂</a></li>
+								<li><a href="">亲们 字母印花T恤最"韩范儿"</a></li>
+								<li><a href="">韩都衣舍：走向"设计师孵化平台"</a></li>
+							</ul>
+						</div>
+						<div class="tab-one">
+							<a href="" style="background: url(img/051.jpg) no-repeat center;"><span>韩都衣舍赵迎光："站在时尚门外的时尚品牌掌门人"</span></a>
+							<ul class="tab-one-list">
+								<li><a href="">赵迎光：把决策力从老板放到员工身上</a></li>
+								<li><a href="">供应链跟不上互联网？看韩都衣舍怎么做</a></li>
+								<li><a href="">情人节，韩都老总竟然为数百人戴戒指？</a></li>
+							</ul>
+						</div>
+					</li>
+					<!--选项卡-无穷花开-->
+					<li>
+						<div class="tab-two">
+							<a href="" style="background: url(img/1.jpg) no-repeat center;"></a>
+							<ul class="tab-one-list">
+								<li><a href="">韩都公益：为汶上县寅寺镇草桥小学学生送礼物</a><a class="all" href="">[详细内容]</a></li>
+								<li><a href="">韩都公益：点亮求学光源 草桥无穷花开</a><a class="all" href="">[详细内容]</a></li>
+								<li><a href="">筑梦留守儿童"公益项目在山东菏泽启动</a><a class="all" href="">[详细内容]</a></li>
+							</ul>
+						</div>
+					</li>
 			</div>
 		</div>
 		<!-- body第二行，视频 -->
@@ -272,9 +690,10 @@
 					<li><a href="javascript:;">韩风童装</a></li>
 				</ul>
 			</div>
-			<div class="newarrival-con">
-				<ul>
-					<li>
+			<ul class="newarrival-con">
+				
+					<!--韩风女装-->
+					<li style="display:block">
 						<ul class="newarrival-part">
 							<li>
 								<a href="">
@@ -314,9 +733,173 @@
 							
 						</ul>
 					</li>
+					<!--韩风男装-->
+					<li>
+						<ul class="newarrival-part">
+							<li>
+								<a href="">
+									<img src="img/1046539_thumb_G_1468897860559.jpg" alt="">
+								</a>
+								<p>￥118.00 <span>￥168.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1046447_thumb_G_1468905995234.jpg" alt="">
+								</a>
+								<p>￥129.00 <span>￥168.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1046445_thumb_G_1468982031432.jpg" alt="">
+								</a>
+								<p>￥118.00 <span>￥168.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1046439_thumb_G_1468906798275.jpg" alt="">
+								</a>
+								<p>￥108.00 <span>￥158.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li style="margin-right:0">
+								<a href="">
+									<img src="img/1046430_thumb_G_1468983958773.jpg" alt="">
+								</a>
+								<p>￥119.00 <span>￥198.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							
+						</ul>
+					</li>
+					<!--迪葵纳-->
+					<li>
+						<ul class="newarrival-part">
+							<li>
+								<a href="">
+									<img src="img/1469562693223723469.jpg" alt="">
+								</a>
+								<p>￥109.00 <span>￥168.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1469649032196674287.jpg" alt="">
+								</a>
+								<p>￥139.00 <span>￥219.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1469562688371111382.jpg" alt="">
+								</a>
+								<p>￥129.00 <span>￥209.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1469562657423732422.jpg" alt="">
+								</a>
+								<p>￥149.00 <span>￥239.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li style="margin-right:0">
+								<a href="">
+									<img src="img/1468957844602408347.jpg" alt="">
+								</a>
+								<p>￥139.00 <span>￥228.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							
+						</ul>
+					</li>
+					<!--韩风名媛-->
+					<li>
+						<ul class="newarrival-part">
+							<li>
+								<a href="">
+									<img src="img/1048074_thumb_G_1471402735145.jpg" alt="">
+								</a>
+								<p>￥228.00 <span>￥228.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1468209052009457069.jpg" alt="">
+								</a>
+								<p>￥88.00 <span>￥268.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1045969_thumb_G_1471400601705.jpg" alt="">
+								</a>
+								<p>￥208.00 <span>￥208.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1463256677937629314.jpg" alt="">
+								</a>
+								<p>￥308.00 <span>￥308.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li style="margin-right:0">
+								<a href="">
+									<img src="img/1459282406204424634.jpg" alt="">
+								</a>
+								<p>￥75.00 <span>￥278.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							
+						</ul>
+					</li>
+					<!--韩风童装-->
+					<li>
+						<ul class="newarrival-part">
+							<li>
+								<a href="">
+									<img src="img/1458675053868088769.jpg" alt="">
+								</a>
+								<p>￥79.00 <span>￥118.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1469514395787941901.jpg" alt="">
+								</a>
+								<p>￥159.00 <span>￥318.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1461573062979729178.jpg" alt="">
+								</a>
+								<p>￥158.00 <span>￥158.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/1459269935532242338.jpg" alt="">
+								</a>
+								<p>￥159.00 <span>￥328.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							<li style="margin-right:0">
+								<a href="">
+									<img src="img/1461572956712479587.jpg" alt="">
+								</a>
+								<p>￥139.00 <span>￥268.00</span></p>
+								<span>立即抢购</span>
+							</li>
+							
+						</ul>
+					</li>
 					
-				</ul>
-			</div>
+				
+			</ul>
 
 		</div>
 		<!-- 韩风时尚女装 -->
@@ -534,6 +1117,7 @@
 					
 				</ul>
 			</div>
+		</div>
 		<!-- 韩风时尚妈妈装 -->
 		<div class="hstyle" style="height:780px">
 			<div class="hstyle-nav" style="background: url(img/web_index.png) no-repeat 0 -140px;">
@@ -616,6 +1200,7 @@
 					
 				</ul>
 			</div>
+		</div>
 		<!-- 韩风甜美少女装 -->
 		<div class="hstyle" style="height:780px">
 			<div class="hstyle-nav" style="background: url(img/web_index.png) no-repeat 0 -140px;">
@@ -692,6 +1277,7 @@
 					
 				</ul>
 			</div>
+		</div>
 		<!-- 韩风时尚童装 -->
 		<div class="hstyle" style="height:780px">
 			<div class="hstyle-nav" style="background: url(img/web_index.png) no-repeat 0 -203px;">
@@ -774,6 +1360,7 @@
 					
 				</ul>
 			</div>
+		</div>	
 		<!-- 欧美时尚女装 -->
 		<div class="hstyle" style="height:780px">
 			<div class="hstyle-nav" style="background: url(img/web_index.png) no-repeat 0 -265px;">
@@ -853,7 +1440,40 @@
 					
 				</ul>
 			</div>
+		</div>
+		<!--韩都咨询-->
+			<div id="index-news">
+				<div class="index-news-title"><a href="">更多></a></div>
+				<a class="index-news-left">
+					
+				</a>
+				<div class="index-news-center">
+					<h3></h3>
+					<ul class="fashion">
+						<li>
+							<dl>
+								<dt><a href="">在韩国首创时尚大赛，韩都衣舍又创新记录</a></dt>
+								<dd>8月12日，韩都衣舍2016韩国时尚设计师大赛成功举办，在到场的200多位重量级嘉宾及中韩两国媒体见证下，一系列战略合作协议达成，多家韩国企业开启了与韩都衣舍的热恋期，韩都衣舍以一己之力再次搅动韩国，成为了中国电商崛起的新标杆。</dd>
+								<dt><a href="">韩都衣舍跨界玩转模特大赛牵手瑞丽“放胆秀色”</a></dt>
+								<dd>在继电商节618狂欢、韩国直播和十周年庆典后，韩都衣舍出现在了瑞丽模特大赛的赛场上。7月17日第十二届瑞丽模特大赛南京站完赛，秀场上身穿韩都衣舍服装的参赛模特们成为金陵城一道亮丽的风景线。</dd>
+							</dl>
+						</li>
+					</ul>
+					<ul class="news-center">
+						<li><a href="韩都衣舍用行动否定电商平台直播没有内容属性">韩都衣舍用行动否定电商平台直播没有内容属性</a></li>
+						<li><a href="韩都衣舍用行动否定电商平台直播没有内容属性">韩都衣舍搭手韩国户外第一品牌 打通电商全产业链</a></li>
+					</ul>
+				</div>
+				<div class="index-news-right">
+					<form action="" name="guanzhu">
+						<input class="news-txt" type="text" />
+						<input class="news-btn" type="button" value="" />
+					</form>
+				</div>
+			</div>			
 	</div>
+	
+	
 
 	<!-- footer -->
 	<div id="footer">
