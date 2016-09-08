@@ -565,50 +565,131 @@
 		</a>
 	</div>
 	<!--login页主体-->
-	<div id="login-container">
-		<div class="login-left"></div>
-		<div class="login-right">
-			<div class="login-form">
-				<h1>用户登录</h1>
-				<form action="" name="formLogin" id="login-form">
-					<ul class="login-form-list">
-						<li>
-							<div class="login-form-name">用户名：</div>
-							<input name="username" id="username" class="login-form-con" type="text" placeholder="邮箱地址/手机号" required required data-rule-mm="true" data-msg-required="请输入邮箱" data-msg-mm="请输入正确格式"/>
-						</li>
-						<li>
-							<div class="login-form-name">密码：</div>
-							<input name="password" class="login-form-con" type="password" value="" required />
-						</li>
-						<li>
-							<div class="login-form-name">验证码：</div>
-							<input style="width:120px;" class="login-form-con" type="text" value="" name="captcha" required/>
-							<img width="86" height="31" id="captcha_img" src="https://login.beibei.com/checkcode/show.html" alt="" />
-						</li>
-						<li style="margin-left:75px;">
-							<span id="message" class="error login-error"></span>
-							<span>
-								<input class="login-btn" type="button" value="立即登录" />
-								<div style="height:35px;line-height:50px;">
-									<input class="login-radio" type="checkbox" name="remember" />保存登录信息
-								</div>
-							</span>
-						</li>
-						<li style="margin-left:80px;height:30px;line-height:30px;float: left;">
-							<a style="text-decoration: underline;" href="">注册</a>
-							<span>|</span>
-							<a style="text-decoration: underline;" href="">忘记密码?</a>
-						</li>
-					</ul>
-				</form>
+	<div id="login-container" style="width:1100px">
+		<div class="login-left" style="background:none">
+			<div class="register-login">已是韩都衣舍用户：
+				<input type="button" value="直接登录" class="register-login-btn"/>
 			</div>
-			<div class="login-other">
-				<div class="login-other-title">其他登陆方式：</div>
-				<div class="login-other-btn">
-					<a href="" style="background:url(../img/login/NEWS_login.png) no-repeat 0 -528px"></a>
-					<a href="" style="background:url(../img/login/NEWS_login.png) no-repeat -111px -528px"></a>
-					<a href="" style="background:url(../img/login/NEWS_login.png) no-repeat -222px -528px"></a>
-					<a href="" style="background:url(../img/login/NEWS_login.png) no-repeat -333px -528px"></a>
+			<img src="../img/login/367-250.png" title="2012-2014上半年度全网销量第一女装品牌" style="margin-left:93px;width:367px;height:250px;"/>
+			<div class="subscription-prompt">
+				<div class="subscription-con">
+					<form action="">
+						<input type="text" class="subscription-txt"/>
+						<input type="text" class="subscription-btn"/>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+		<div class="register-right">
+			<div class="register-nav">
+				<div class="register-num">1</div>
+				<div class="register-numName">选择注册方式</div>
+				<div class="register-fs">
+					<a href="javascript:;" class="telbtn">使用手机注册</a>
+					<a href="javascript:;" class="mailbtn">使用邮箱注册</a>
+				</div>
+				<div class="register-tip">
+					<span style="display: block;">使用手机号注册再享手机优惠券</span>
+					<span style="display:none">推荐使用手机注册，保障账号安全，享安全无忧购物！</span>
+				</div>
+			</div>
+			<div class="register-msg">
+				<div class="register-num">2</div>
+				<div class="register-numName">填写您的信息</div>
+				<div class="reg-msg-container">
+					<!--手机注册表单-->
+					<form action="" name="formMobile" id="formMobile" style="display:block">
+						<ul class="register-list">
+							<li>
+								<div class="register-list-name">您的手机号：</div>
+								<input type="text" value="" class="register-list-txt" name="mobilenum"/>
+								<input type="button" value="发送验证码" class="register-list-telphone"/>
+							</li>
+							<li>
+								<div class="register-list-con">
+									
+							请输入您在注册时使用的手机号码,若当前号码不用/丢失，或无法收到验证码?
+							<a href="" style="color:#bf0000">其他验证方式</a>
+								</div>
+							</li>
+							<li>
+								<div class="register-list-name" style="margin-top:10px;margin-bottom:10px;">验证码：</div>
+								<input type="text" value="" class="register-list-txt"/>
+							</li>
+							<li>
+								<div class="register-list-name">密码：</div>
+								<input type="text" value="" class="register-list-txt"/>
+							</li>
+							<li>
+								<div class="register-list-con">
+									6-16位字符，可使用字母、数字或符号的组合
+								</div>
+							</li>
+							<li>
+								<div class="register-list-name">确认密码：</div>
+								<input type="text" value="" class="register-list-txt"/>
+							</li>
+							<li>
+								<div class="register-list-protocol">
+									<input type="checkbox" value="1" checked="checked" name="agreement"/>
+									我已看过并接受
+									<a href="http://www.handu.com/helper-21-734.html" target="_blank" style="color:#bf0000">《用户协议》</a>
+								</div>
+							</li>
+							<li>
+								<input type="submit" value="同意协议并注册" class="register-list-agree"/>
+							</li>
+						</ul>
+					</form>
+					<!--邮箱注册表单-->
+					<form action="" name="formMail" style="display:none">
+						<ul class="register-list">
+							<li>
+								<div class="register-list-name">Email：</div>
+								<input type="text" value="" class="register-list-txt"/>
+							</li>
+							<li>
+								<div class="register-list-con">	
+								Email地址作为用户名，同时也用于接收账户信息、订单通知及密码找回等功能
+								</div>
+							</li>
+
+							<li>
+								<div class="register-list-name">密码：</div>
+								<input type="text" value="" class="register-list-txt"/>
+							</li>
+							<li>
+								<div class="register-list-con">
+									6-16位字符，可使用字母、数字或符号的组合
+								</div>
+							</li>
+							<li>
+								<div class="register-list-name">确认密码：</div>
+								<input type="text" value="" class="register-list-txt"/>
+							</li>
+							<li>
+								<div class="register-list-con">	
+								请再次输入密码，两次输入必须一致
+								</div>
+							</li>
+							<li>
+								<div class="register-list-name">验证码：</div>
+								<input type="text" value="" style="width:115px;border:1px solid #dedede;height:30px;float:left;"/>
+								<img width="86" height="31" style="float:left;" src="https://login.beibei.com/checkcode/show.html" alt="" />
+							</li>
+							<li>
+								<div class="register-list-protocol">
+									<input type="checkbox" value="1" checked="checked" name="agreement"/>
+									我已看过并接受
+									<a href="http://www.handu.com/helper-21-734.html" target="_blank" style="color:#bf0000">《用户协议》</a>
+								</div>
+							</li>
+							<li>
+								<input type="submit" value="同意协议并注册" class="register-list-agree"/>
+							</li>
+						</ul>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -617,7 +698,17 @@
 	<!--表单验证-->
 	<script type="text/javascript">
         $(function(){
-            var validate = $("#login-form").validate({
+        	//注册选项卡
+        	$(".register-fs a").on("click",function(){
+        		$(this).removeClass().addClass("telbtn").siblings().removeClass().addClass("mailbtn");
+        		$(".reg-msg-container form").eq($(this).index()).css({display:"block"}).siblings().css({display:"none"});
+        	})
+        	jQuery.validator.addMethod("isMobile", function(value, element) {
+			    var length = value.length;
+			    var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+			    return this.optional(element) || (length == 11 && mobile.test(value));
+			}, "请正确填写您的手机号码");
+            var validate = $("#formMobile").validate({
                 debug: true, //调试模式取消submit的默认提交功能   
                 //errorClass: "label.error", //默认为错误的样式类为：error   
                 focusInvalid: false, //当为false时，验证无效时，没有焦点响应  
@@ -628,10 +719,10 @@
                 },   
                 
                 rules:{
-                    username:{
+                    mobile:{
                         required:true,
-                        email: true
-                        
+                        minlength:11,
+                        isMobile:true
                     },
                     password:{
                         required: true,
@@ -639,21 +730,19 @@
                     }                 
                 },
                 messages:{
-                    username:{
-                        required:"必填",
-                        email:"邮箱格式不正确"
+                    mobile:{
+                        required:"请输入手机号"
+             
                     },
                     password:{
                         required: "不能为空",
                         minlength: "密码长度不能小于 5 个字母"
                     }                     
                 },
-             errorPlacement: function(error) {
-	             	if(!$("#message").text()){
-	             		error.appendTo($("#message"));
-	             	}
-		    	 
-				}             
+              errorPlacement : function(error, element) {
+			        error.appendTo(element);
+			    },
+			    ignore : ".codeCls"          
             });    
             
     		
