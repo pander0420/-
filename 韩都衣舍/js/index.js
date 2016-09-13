@@ -141,4 +141,18 @@ $(function(){
 		})
 	}
 	links();
+	$(window).scroll(function(){
+      var t = document.documentElement.scrollTop||document.body.scrollTop;
+      if(t>450){
+    $(".float_box").fadeIn();
+      }
+      else{
+    $(".float_box").hide();
+      }
+	})
+	$('.float_box .backTop').click(function(){
+	    $("html, body").animate({'scrollTop':0},320);
+	})
 });
+
+
